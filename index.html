@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>System Info App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="output"></div>
+    </div>
+</body>
+<script>
+    console.log(process);
+    let output = `
+        <h3 class="page-header">System Info</h3>
+        <ul class="list-group">
+            <li class="list-group-item">System Architecture: ${process.arch}</li>
+            <li class="list-group-item">Process Identifier: ${process.env.PROCESS_IDENTIFIER}</li>
+            <li class="list-group-item">Total Memory: ${process.getSystemMemoryInfo().total}</li>
+            <li class="list-group-item">Free Memory: ${process.getSystemMemoryInfo().free}</li>
+            <li class="list-group-item">Computer Name: ${process.env.USERDOMAIN}</li>
+            <li class="list-group-item">User Name: ${process.env.USER}</li>
+            <li class="list-group-item">User Home Path: ${process.env.HOME}</li>
+            <li class="list-group-item">System Root: ${process.env.SYSTEMROOT}</li>
+            <li class="list-group-item">System Drive: ${process.env.SYSTEMDRIVE}</li>
+        </ul>
+    `;
+    document.getElementById('output').innerHTML = output;
+</script>
+<script>
+    require('./renderer.js');
+</script>
+
+</html>

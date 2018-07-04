@@ -1,0 +1,26 @@
+{
+  "name": "electron-sysinfo-app",
+  "version": "1.0.0",
+  "description": "Electron system info application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neeraj87/electron-sysinfo-app.git"
+  },
+  "keywords": [
+    "electron",
+    "system-info"
+  ],
+  "author": "Neeraj Jadhav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neeraj87/electron-sysinfo-app/issues"
+  },
+  "homepage": "https://github.com/neeraj87/electron-sysinfo-app#readme",
+  "dependencies": {
+    "electron": "^2.0.4"
+  }
+}
